@@ -1,0 +1,15 @@
+bin/
+.env
+*.tfstate
+*.tfstate.*
+.terraform/
+coverage.out
+
+.env.*
+!.env.example
+*.pem
+*.key
+*.tfvars
+.idea/
+.vscode/
+*.backup

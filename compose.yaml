@@ -1,0 +1,37 @@
+name: global-streaming-reliability-platform
+services:
+  api:
+    build:
+      context: .
+    image: ghcr.io/thalitanevesti/global-streaming-reliability-platform:local
+    environment:
+      APP_ENV: local
+      APP_PORT: "8080"
+      LOG_LEVEL: info
+    ports:
+      - "127.0.0.1:18080:8080"
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 100
+    mem_limit: 128m
+    cpus: 0.50
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "/streaming-api", "-healthcheck"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    networks:
+      - platform
+
+networks:
+  platform:
+    driver: bridge
+    internal: false
+
