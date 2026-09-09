@@ -16,9 +16,9 @@ A production-oriented portfolio project for designing, securing, observing, and 
 
 ```bash
 docker compose up --build -d
-curl http://localhost:8080/health
-curl http://localhost:8080/api/v1/catalog
-curl -X POST http://localhost:8080/api/v1/sessions \
+curl http://localhost:18080/health
+curl http://localhost:18080/api/v1/catalog
+curl -X POST http://localhost:18080/api/v1/sessions \
   -H 'Content-Type: application/json' \
   -d '{"content_id":"film-001"}'
 ```
