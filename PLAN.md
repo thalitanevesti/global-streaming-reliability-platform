@@ -8,7 +8,7 @@
 - [x] Harden container execution
 - [x] Align local documentation with Docker Compose
 - [ ] Improve CI security and reproducibility
-- [ ] Add dependency and container scanning
+- [x] Add dependency and container scanning
 - [ ] Validate the complete repository
 - [ ] Open and merge the hardening pull request
 
